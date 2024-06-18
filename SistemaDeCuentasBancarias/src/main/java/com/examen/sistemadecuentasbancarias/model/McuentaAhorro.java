@@ -8,7 +8,6 @@ import java.sql.ResultSet;
  * @author Kevin
  */
 public class McuentaAhorro extends McuentaBancaria{
-      String usuario = super.getUsuario();
     DAO dao = new DAO();
     Connection conn;
     
@@ -39,12 +38,12 @@ public class McuentaAhorro extends McuentaBancaria{
     
     @Override
     public ResultSet consulta() {
-        return dao.consultasaldo(conn,usuario);
+        return dao.consultasaldo(conn,super.getUsuario());
     }
 
     @Override
     public long registro(String contra) {
-        return dao.insertusuariocorriente(conn,usuario, contra);
+        return dao.insertusuarioahorro(conn,super.getUsuario(), contra);
     }
 
     @Override
@@ -66,6 +65,6 @@ public class McuentaAhorro extends McuentaBancaria{
     }
     
     public ResultSet consultaahorro() {
-        return dao.consultaahorro(conn,usuario);
+        return dao.consultaahorro(conn,super.getUsuario());
     }
 }

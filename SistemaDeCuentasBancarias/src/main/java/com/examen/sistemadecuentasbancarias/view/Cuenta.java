@@ -27,12 +27,13 @@ public class Cuenta extends javax.swing.JFrame {
             this.ccm = ccm;
             Cuenta.this.lblSaldo.setText(String.valueOf(corriente.getSaldo()));
             Cuenta.this.lblCuenta.setText(String.valueOf(corriente.getNumeroCuenta()));
-        }else if(tipo.equals("corriente")){
+        }else if(tipo.equals("ahorro")){
             ahorro = ccm.rahorro();
             ccm.saldoahorro();
             this.ccm = ccm;
             Cuenta.this.lblSaldo.setText(String.valueOf(ahorro.getSaldo()));
             Cuenta.this.lblCuenta.setText(String.valueOf(ahorro.getNumeroCuenta()));
+            Cuenta.this.lblAhorroCant .setText(String.valueOf(ahorro.getAhorro()));
         }
     }
 

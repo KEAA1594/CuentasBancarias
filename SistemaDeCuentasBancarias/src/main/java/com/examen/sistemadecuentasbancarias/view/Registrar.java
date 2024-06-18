@@ -142,10 +142,22 @@ public class Registrar extends javax.swing.JFrame {
         if(Registrar.this.jrbAhorro.isSelected()){
             if(!Registrar.this.txtFieldUsuario.getText().equals("") && !Registrar.this.txtFieldPass.getText().equals("")){
                 cr.registrarahorro(Registrar.this.txtFieldUsuario.getText(), Registrar.this.txtFieldPass.getText());
+                Registrar.this.dispose();
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Bancxamen().setVisible(true);
+            }
+        });
             }
         }else if(Registrar.this.jrbCorriente.isSelected()){
             if(!Registrar.this.txtFieldUsuario.getText().equals("") && !Registrar.this.txtFieldPass.getText().equals("")){
                 cr.registrarcorriente(Registrar.this.txtFieldUsuario.getText(), Registrar.this.txtFieldPass.getText());
+                Registrar.this.dispose();
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Bancxamen().setVisible(true);
+            }
+        });
             }
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
